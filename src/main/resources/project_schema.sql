@@ -20,7 +20,9 @@ CREATE TABLE material (
   material_name VARCHAR(128) NOT NULL,
   num_required INT,
   cost DECIMAL (7,2),
-  PRIMARY KEY (material_id)
+  project_id INT NOT NULL,
+  PRIMARY KEY (material_id),
+  FOREIGN KEY (project_id) REFERENCES project (project_id) ON DELETE CASCADE
     );
 
 CREATE TABLE step (
